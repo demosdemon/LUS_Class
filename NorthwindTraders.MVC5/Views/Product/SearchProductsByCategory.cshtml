@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "SearchProductsByCategory";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/ko")
+    <script src="~/Scripts/ViewScripts/SearchProductsByCategory.js"></script>
+}
+
+<div class="container">
+
+    <h2>Search Products by Category</h2>
+
+    <p></p>
+
+    <select class="form-control" data-bind="options: categories, 
+                optionsCaption: 'Select a category...', 
+                optionsText: 'CategoryName', 
+                optionsValue: 'CategoryID',
+                value: categoryID"> </select>
+
+    <div>
+        <table class="table table-responsive table-bordered tableProducts" data-bind="if: categoryID">
+            <thead>
+                <tr>
+                    <th>ProductID</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: products">
+                <tr>
+                    <td data-bind="text: ProductID"></td>
+                    <td data-bind="text: ProductName"></td>
+                    <td data-bind="text: FormattedPrice"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

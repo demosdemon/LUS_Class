@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Search Employees";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/ko")
+    <script src="~/Scripts/ViewScripts/SearchEmployees.js"></script>
+}
+
+<div class="container">
+    <h2>Northwind has <span data-bind="text: employeeCount"></span> employees</h2>
+
+    <select class="form-control" data-bind="options: employeeTitles, optionsCaption: 'Select a title...', value: selectedTitle"></select>
+
+    <div class="row" data-bind="foreach: selectedEmployees">
+        <div class="col-md-6">
+            <p><span data-bind="text: FirstName"></span>&nbsp;<span data-bind="text: LastName"></span></p>
+            <p>Employee ID: <span data-bind="text: EmployeeID"></span></p>
+            <p>Home Phone: <span data-bind="text: HomePhone"></span></p>
+            <p>Hire Date: <span data-bind="text: FormattedHireDate"></span></p>
+        </div>
+    </div>
+</div>
