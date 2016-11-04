@@ -15,7 +15,7 @@ namespace NorthwindTraders.DAL
         {
             var products = null as List<Product_POCO>;
 
-            using (var northwindCtx = new NorthwindEntities())
+            using (var northwindCtx = new Northwind())
                 products = northwindCtx.Products
                     .Where(product => product.CategoryID == categoryID)
                     .Select(product => new Product_POCO

@@ -51,72 +51,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Category.cs" />
     <Compile Include="CategoryDataAccess.cs" />
     <Compile Include="Contracts\ICategoryDAL.cs" />
     <Compile Include="Contracts\IProductDAL.cs" />
-    <Compile Include="Employee.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="EmployeeDataAccess.cs" />
-    <Compile Include="GetEmployeesByTitle_Result.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Northwind.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Northwind.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Northwind.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Northwind.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Northwind.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Northwind.cs" />
     <Compile Include="POCOS\Category_POCO.cs" />
     <Compile Include="POCOS\Employee_POCO.cs" />
     <Compile Include="Contracts\IEmployeeDAL.cs" />
     <Compile Include="POCOS\Product_POCO.cs" />
-    <Compile Include="Product.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="ProductDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ten_Most_Expensive_Products_Result.cs">
-      <DependentUpon>Northwind.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Northwind.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Northwind.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Northwind.edmx.diagram">
-      <DependentUpon>Northwind.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Northwind.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Northwind.edmx</DependentUpon>
-      <LastGenOutput>Northwind.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Northwind.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Northwind.edmx</DependentUpon>
-      <LastGenOutput>Northwind.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

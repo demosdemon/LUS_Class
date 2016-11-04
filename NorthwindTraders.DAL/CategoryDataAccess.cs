@@ -14,7 +14,7 @@ namespace NorthwindTraders.DAL
         {
             var categories = null as List<Category_POCO>;
 
-            using (var northwindCtx = new NorthwindEntities())
+            using (var northwindCtx = new Northwind())
             {
                 categories = northwindCtx.Categories
                     .Select(category => new Category_POCO

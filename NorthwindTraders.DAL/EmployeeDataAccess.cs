@@ -14,8 +14,8 @@ namespace NorthwindTraders.DAL
         {
             int rowsAffected;
 
-            using (var ctx = new NorthwindEntities())
-                rowsAffected = ctx.CreateEmployee(employee.LastName,
+            using (var northwindCtx = new Northwind())
+                rowsAffected = northwindCtx.CreateEmployee(employee.LastName,
                     employee.FirstName,
                     employee.Title,
                     employee.HomePhone,
@@ -28,8 +28,8 @@ namespace NorthwindTraders.DAL
         {
             int employeeCount = 0;
 
-            using (var ctx = new NorthwindEntities())
-                employeeCount = ctx.Employees.Count();
+            using (var northwindCtx = new Northwind())
+                employeeCount = northwindCtx.Employees.Count();
 
             return employeeCount;
         }
@@ -38,19 +38,8 @@ namespace NorthwindTraders.DAL
         {
             var employees = null as List<Employee_POCO>;
 
-            using (var ctx = new NorthwindEntities())
-                employees = ctx.GetEmployeesByTitle(title)
-                    .AsEnumerable()
-                    .Select(employee => new Employee_POCO
-                    {
-                        EmployeeID = employee.EmployeeID,
-                        LastName = employee.LastName,
-                        FirstName = employee.FirstName,
-                        Title = employee.Title,
-                        HomePhone = employee.HomePhone,
-                        HireDate = employee.HireDate
-                    })
-                    .ToList();
+            using (var northwindCtx = new Northwind())
+                employees = northwindCtx.GetEmployeesByTitle(title);
 
             return employees;
         }
@@ -59,8 +48,8 @@ namespace NorthwindTraders.DAL
         {
             var titles = null as List<string>;
 
-            using (var ctx = new NorthwindEntities())
-                titles = ctx.GetEmployeeTitles().ToList();
+            using (var northwindCtx = new Northwind())
+                titles = northwindCtx.GetEmployeeTitles().ToList();
 
             return titles;
         }
